@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Devlet Onaylı Diploma Satışı - Resmi Kayıtlı Diploma Edinme Rehberi</title>
+    <meta name="description"
+        content="E-Devlet onaylı diploma satışı hizmeti. Devlet portalında sorgulanan, resmi kayıt altına alınan lise, önlisans ve lisans diploma danışmanlığı.">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="en2xKGt73zDRF29TSA34_ccFIHvHIRjwItSB5hjEV_A" />
+    <link rel="canonical" href="https://edevletonaylidiplomasatisi.github.io/">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: #0f0b1a;
+            color: #e8e4f0
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15, 11, 26, .88);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 92, 246, .12)
+        }
+
+        .topbar-in {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 13px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #c4b5fd;
+            text-decoration: none;
+            letter-spacing: -.4px
+        }
+
+        .brand span {
+            color: #a78bfa
+        }
+
+        .t-links {
+            display: flex;
+            gap: 20px;
+            list-style: none
+        }
+
+        .t-links a {
+            text-decoration: none;
+            color: #9f8cc7;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s
+        }
+
+        .t-links a:hover {
+            color: #c4b5fd
+        }
+
+        .m-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #c4b5fd
+        }
+
+        .m-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 11, 26, .97);
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 26px
+        }
+
+        .m-overlay.active {
+            display: flex
+        }
+
+        .m-overlay a {
+            font-size: 19px;
+            color: #c4b5fd;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .m-x {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 26px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #c4b5fd
+        }
+
+        @media(max-width:768px) {
+            .t-links {
+                display: none
+            }
+
+            .m-toggle {
+                display: block
+            }
+        }
+
+        .banner {
+            text-align: center;
+            padding: 76px 22px 60px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, .15) 0%, transparent 70%)
+        }
+
+        .banner-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            background: rgba(139, 92, 246, .12);
+            color: #a78bfa;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: .6px;
+            text-transform: uppercase;
+            border: 1px solid rgba(139, 92, 246, .15)
+        }
+
+        .banner h1 {
+            font-size: clamp(27px, 5vw, 46px);
+            font-weight: 900;
+            color: #f5f3ff;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            letter-spacing: -.5px
+        }
+
+        .banner h1 mark {
+            background: none;
+            color: #a78bfa
+        }
+
+        .banner p {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #9f8cc7;
+            max-width: 580px;
+            margin: 0 auto 26px;
+            line-height: 1.75
+        }
+
+        .banner-acts {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .act-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13.5px;
+            transition: all .3s;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, .3)
+        }
+
+        .act-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(124, 58, 237, .45)
+        }
+
+        .act-sec {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 12px 24px;
+            background: transparent;
+            color: #c4b5fd;
+            border: 1.5px solid rgba(139, 92, 246, .3);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13.5px;
+            transition: all .3s
+        }
+
+        .act-sec:hover {
+            border-color: #a78bfa;
+            color: #e9ddff
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 52px 22px
+        }
+
+        .hdg {
+            font-size: clamp(21px, 3.5vw, 32px);
+            font-weight: 800;
+            text-align: center;
+            color: #f5f3ff;
+            margin-bottom: 6px;
+            letter-spacing: -.3px
+        }
+
+        .hdg mark {
+            background: none;
+            color: #a78bfa
+        }
+
+        .hdg-sub {
+            text-align: center;
+            color: #7c6f9b;
+            font-size: 13.5px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        @media(max-width:768px) {
+            .pillars {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .pillar {
+            background: rgba(139, 92, 246, .05);
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid rgba(139, 92, 246, .1);
+            transition: all .3s
+        }
+
+        .pillar:hover {
+            background: rgba(139, 92, 246, .08);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .2)
+        }
+
+        .pillar-emoji {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block
+        }
+
+        .pillar h3 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #e9ddff;
+            margin-bottom: 5px
+        }
+
+        .pillar p {
+            font-size: 12.5px;
+            color: #8b7fb0;
+            line-height: 1.6
+        }
+
+        .showcase {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px
+        }
+
+        .showcase img {
+            width: 100%;
+            height: 165px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .3s;
+            border: 1.5px solid rgba(139, 92, 246, .12);
+            opacity: .9
+        }
+
+        .showcase img:hover {
+            opacity: 1;
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, .2)
+        }
+
+        @media(max-width:768px) {
+            .showcase {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px
+            }
+
+            .showcase img {
+                height: 125px
+            }
+        }
+
+        @media(max-width:400px) {
+            .showcase img {
+                height: 105px;
+                border-radius: 8px
+            }
+        }
+
+        #lbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer
+        }
+
+        #lbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 10px
+        }
+
+        .lbox-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            color: #c4b5fd;
+            font-size: 26px;
+            cursor: pointer
+        }
+
+        .tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 18px
+        }
+
+        .tier {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 16px;
+            padding: 26px 22px;
+            border: 1px solid rgba(139, 92, 246, .1);
+            text-align: center;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .tier:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, .25)
+        }
+
+        .tier.featured {
+            border-color: rgba(139, 92, 246, .3);
+            background: rgba(139, 92, 246, .08)
+        }
+
+        .tier.featured::after {
+            content: 'POPÜLER';
+            position: absolute;
+            top: 12px;
+            right: -30px;
+            background: #7c3aed;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 34px;
+            transform: rotate(45deg);
+            letter-spacing: .8px
+        }
+
+        .tier h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #e9ddff;
+            margin-bottom: 8px
+        }
+
+        .tier-price {
+            font-size: 28px;
+            font-weight: 900;
+            color: #a78bfa;
+            margin-bottom: 12px
+        }
+
+        .tier ul {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 16px
+        }
+
+        .tier li {
+            padding: 4px 0;
+            font-size: 12px;
+            color: #9f8cc7;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px
+        }
+
+        .tier li .dot {
+            color: #7c3aed;
+            font-weight: 800;
+            flex-shrink: 0
+        }
+
+        .tier-cta {
+            display: block;
+            padding: 10px;
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12.5px;
+            transition: all .3s
+        }
+
+        .tier-cta:hover {
+            opacity: .9
+        }
+
+        .tier-full {
+            grid-column: 1/-1;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            text-align: left;
+            background: linear-gradient(135deg, rgba(139, 92, 246, .08), rgba(124, 58, 237, .05))
+        }
+
+        .tier-full .tf-body {
+            flex: 1
+        }
+
+        .tier-full .tf-side {
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 230px
+        }
+
+        @media(max-width:600px) {
+            .tier-full {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+
+        .app-box {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 16px;
+            padding: 32px 22px;
+            border: 1px solid rgba(139, 92, 246, .1);
+            max-width: 580px;
+            margin: 0 auto
+        }
+
+        .fg {
+            margin-bottom: 12px
+        }
+
+        .fl {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9f8cc7;
+            margin-bottom: 4px;
+            display: block
+        }
+
+        .fi {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1.5px solid rgba(139, 92, 246, .15);
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            transition: border .2s;
+            background: rgba(15, 11, 26, .6);
+            color: #e8e4f0;
+            font-family: inherit
+        }
+
+        .fi:focus {
+            border-color: #7c3aed
+        }
+
+        .fi::placeholder {
+            color: #6b5f8a
+        }
+
+        .fi-err {
+            display: none;
+            color: #f87171;
+            font-size: 11px;
+            margin-top: 3px
+        }
+
+        .fi-inv {
+            border-color: #f87171 !important
+        }
+
+        .wa-go {
+            width: 100%;
+            padding: 12px;
+            background: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            font-family: inherit
+        }
+
+        .wa-go:hover {
+            background: #1fb855;
+            transform: translateY(-1px)
+        }
+
+        .qa-block {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 10px;
+            margin-bottom: 5px;
+            border: 1px solid rgba(139, 92, 246, .08);
+            overflow: hidden
+        }
+
+        .qa-head {
+            padding: 13px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #e9ddff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .qa-chevron {
+            transition: transform .3s;
+            font-size: 10px;
+            color: #a78bfa
+        }
+
+        .qa-body {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 16px;
+            font-size: 12.5px;
+            color: #8b7fb0;
+            line-height: 1.7;
+            transition: all .3s
+        }
+
+        .qa-block.show .qa-body {
+            max-height: 300px;
+            padding: 0 16px 12px
+        }
+
+        .qa-block.show .qa-chevron {
+            transform: rotate(180deg)
+        }
+
+        .vouch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px
+        }
+
+        .vouch {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid rgba(139, 92, 246, .08)
+        }
+
+        .vouch-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px
+        }
+
+        .vouch-who {
+            font-weight: 700;
+            font-size: 12.5px;
+            color: #e9ddff
+        }
+
+        .vouch-score {
+            font-size: 11px;
+            color: #a78bfa
+        }
+
+        .vouch-msg {
+            font-size: 12px;
+            color: #8b7fb0;
+            line-height: 1.6
+        }
+
+        .vouch-add {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 10px;
+            padding: 18px;
+            border: 1px solid rgba(139, 92, 246, .08);
+            margin-top: 14px
+        }
+
+        .info-panel {
+            background: rgba(139, 92, 246, .04);
+            border-radius: 14px;
+            padding: 26px;
+            border: 1px solid rgba(139, 92, 246, .08);
+            margin-top: 16px
+        }
+
+        .info-panel h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #e9ddff;
+            margin-bottom: 8px
+        }
+
+        .info-panel h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #c4b5fd;
+            margin: 12px 0 5px
+        }
+
+        .info-panel p {
+            font-size: 12.5px;
+            color: #8b7fb0;
+            line-height: 1.7;
+            margin-bottom: 5px
+        }
+
+        .info-panel ul {
+            margin: 5px 0 5px 16px;
+            color: #8b7fb0;
+            font-size: 12.5px;
+            line-height: 1.8
+        }
+
+        footer {
+            background: rgba(139, 92, 246, .03);
+            color: #6b5f8a;
+            padding: 26px 20px;
+            text-align: center;
+            font-size: 11.5px;
+            margin-top: 32px;
+            border-top: 1px solid rgba(139, 92, 246, .08)
+        }
+
+        footer a {
+            color: #a78bfa;
+            text-decoration: none
+        }
+
+        .wa-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 52px;
+            height: 52px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, .35);
+            z-index: 40;
+            transition: transform .3s
+        }
+
+        .wa-bubble:hover {
+            transform: scale(1.12)
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="topbar">
+        <div class="topbar-in">
+            <a href="#" class="brand">e-devlet<span>Onaylı</span>Diploma</a>
+            <ul class="t-links">
+                <li><a href="#neden">Neden Biz</a></li>
+                <li><a href="#vitrin">Vitrin</a></li>
+                <li><a href="#ucretler">Ücretler</a></li>
+                <li><a href="#kayit">Kayıt</a></li>
+                <li><a href="#gorusler">Görüşler</a></li>
+                <li><a href="#sorular">Sorular</a></li>
+            </ul>
+            <button class="m-toggle" onclick="document.getElementById('mNav').classList.add('active')">☰</button>
+        </div>
+    </nav>
+
+    <div id="mNav" class="m-overlay">
+        <button class="m-x" onclick="this.parentElement.classList.remove('active')">✕</button>
+        <a href="#neden" onclick="this.parentElement.classList.remove('active')">Neden Biz</a>
+        <a href="#vitrin" onclick="this.parentElement.classList.remove('active')">Vitrin</a>
+        <a href="#ucretler" onclick="this.parentElement.classList.remove('active')">Ücretler</a>
+        <a href="#kayit" onclick="this.parentElement.classList.remove('active')">Kayıt</a>
+        <a href="#gorusler" onclick="this.parentElement.classList.remove('active')">Görüşler</a>
+        <a href="#sorular" onclick="this.parentElement.classList.remove('active')">Sorular</a>
+    </div>
+
+    <section class="banner">
+        <div class="banner-tag">◆ RESMİ PORTAL KAYITLI HİZMET</div>
+        <h1>Devlet Portalında <mark>Sorgulanabilir</mark><br>Diploma Edinme Rehberi</h1>
+        <p>Kariyer hedeflerinize ulaşmanızda eksik kalan akademik belgeleri tamamlayın. Sürecin her aşamasında
+            yanınızdayız — kayıt işlemlerinden fiziksel teslimata kadar.</p>
+        <div class="banner-acts">
+            <a href="#ucretler" class="act-main">💰 Ücret Tablosu</a>
+            <a href="#kayit" class="act-sec">📋 Kayıt Başlat</a>
+        </div>
+    </section>
+
+    <div class="wrap" id="neden">
+        <h2 class="hdg">Bizi <mark>Tercih Etme</mark> Gerekçeleriniz</h2>
+        <p class="hdg-sub">Onlarca başarılı işlem deneyimiyle oluşturduğumuz altyapı, sektörde standartları belirliyor.
+        </p>
+        <div class="pillars">
+            <div class="pillar"><span class="pillar-emoji">🛡️</span>
+                <h3>Sıfır İzli Çalışma Modeli</h3>
+                <p>Tüm iletişim ve evrak trafiği uçtan uca şifrelenir. İşlemin ardından dijital ortamda hiçbir kişisel
+                    veri kalmaz, tamamen silinir.</p>
+            </div>
+            <div class="pillar"><span class="pillar-emoji">🏗️</span>
+                <h3>Altyapı Entegrasyonu</h3>
+                <p>Oluşturulan belgeler devletin dijital kapısından doğrulanabilir biçimde ilgili eğitim kurumlarının
+                    veri tabanlarına eklenir.</p>
+            </div>
+            <div class="pillar"><span class="pillar-emoji">🚀</span>
+                <h3>Kısa Sürede Sonuç</h3>
+                <p>Dijital kayıt süreci ortalama 4-5 iş gününde tamamlanır. Basılı kopya ise takip eden 1-2 iş gününde
+                    kargoya teslim edilir.</p>
+            </div>
+            <div class="pillar"><span class="pillar-emoji">✨</span>
+                <h3>Kusursuz Üretim Detayları</h3>
+                <p>Özel gramajlı kağıt, termal kabartma, soğuk damga, ıslak mürekkep imza ve holografik etiket her
+                    belgede mevcuttur.</p>
+            </div>
+            <div class="pillar"><span class="pillar-emoji">📬</span>
+                <h3>İsimsiz Teslimat Sistemi</h3>
+                <p>Paketlerin üzerinde göndericiyi veya içeriği tanımlayan hiçbir detay yer almaz. Türkiye genelinde
+                    bedelsiz ulaştırılır.</p>
+            </div>
+            <div class="pillar"><span class="pillar-emoji">🔄</span>
+                <h3>Parçalı Ödeme Seçeneği</h3>
+                <p>Başlangıçta sabit bir tutar alınır, kalan meblağ aylık eşit dilimlere bölünerek tahsil edilir.
+                    Sürpriz ücret yoktur.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap" id="vitrin">
+        <h2 class="hdg">Üretim <mark>Portföyü</mark></h2>
+        <p class="hdg-sub">Geçmiş dönemlerde tamamlanan çalışmalardan seçilmiş görseller.</p>
+        <div class="showcase">
+            <img src="compressed-images/diploma-1.jpg" alt="Belge görseli 1" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-2.jpg" alt="Belge görseli 2" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-3.jpg" alt="Belge görseli 3" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-4.jpg" alt="Belge görseli 4" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-5.jpg" alt="Belge görseli 5" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-6.jpg" alt="Belge görseli 6" loading="lazy" onclick="showLB(this.src)">
+            <img src="compressed-images/edevlet-onayi.jpg" alt="Dijital onay görseli" loading="lazy"
+                onclick="showLB(this.src)">
+            <img src="compressed-images/diploma-ornek.jpg" alt="Genel belge görseli" loading="lazy"
+                onclick="showLB(this.src)">
+        </div>
+    </div>
+    <div id="lbox" onclick="hideLB()"><img id="lbPic" src="" alt="Genişletilmiş görsel">
+        <div class="lbox-close">✕</div>
+    </div>
+
+    <div class="wrap" id="ucretler">
+        <h2 class="hdg">Yatırım <mark>Planları</mark></h2>
+        <p class="hdg-sub">Akademik hedefinize uygun paketi belirleyin, süreci birlikte yönetelim.</p>
+        <div class="tiers">
+            <div class="tier">
+                <h3>🎓 Lisans Derecesi</h3>
+                <div class="tier-price">15.000 ₺</div>
+                <ul>
+                    <li><span class="dot">●</span> 4.000 ₺ başlangıç, 4 ay taksit</li>
+                    <li><span class="dot">●</span> Devlet portalı ve üniversite kaydı</li>
+                    <li><span class="dot">●</span> Termal kabartma, ıslak imza, soğuk damga</li>
+                    <li><span class="dot">●</span> Holografik güvenlik bandı</li>
+                    <li><span class="dot">●</span> Not dökümü ve noter onay imkânı</li>
+                    <li><span class="dot">●</span> Bedelsiz isimsiz gönderim</li>
+                    <li><span class="dot">●</span> Portal kaydı: 4-5 iş günü</li>
+                </ul>
+                <a class="tier-cta" href="#kayit" onclick="pickProg('Lisans')">📝 Kayıt Başlat</a>
+            </div>
+            <div class="tier featured">
+                <h3>📘 Önlisans Derecesi</h3>
+                <div class="tier-price">12.000 ₺</div>
+                <ul>
+                    <li><span class="dot">●</span> 4.000 ₺ başlangıç, 3 ay taksit</li>
+                    <li><span class="dot">●</span> Devlet portalı ve kurum kaydı</li>
+                    <li><span class="dot">●</span> Termal kabartma, ıslak imza, soğuk damga</li>
+                    <li><span class="dot">●</span> Holografik güvenlik bandı</li>
+                    <li><span class="dot">●</span> Not dökümü ve noter onay imkânı</li>
+                    <li><span class="dot">●</span> Bedelsiz isimsiz gönderim</li>
+                    <li><span class="dot">●</span> Portal kaydı: 4-5 iş günü</li>
+                </ul>
+                <a class="tier-cta" href="#kayit" onclick="pickProg('Önlisans')">📝 Kayıt Başlat</a>
+            </div>
+            <div class="tier">
+                <h3>📗 Lise Belgesi</h3>
+                <div class="tier-price">8.000 ₺</div>
+                <ul>
+                    <li><span class="dot">●</span> 4.000 ₺ başlangıç, 1 ay sonra bakiye</li>
+                    <li><span class="dot">●</span> Devlet portalı ve MEB kaydı</li>
+                    <li><span class="dot">●</span> Termal kabartma, ıslak imza, soğuk damga</li>
+                    <li><span class="dot">●</span> Holografik güvenlik bandı</li>
+                    <li><span class="dot">●</span> Not dökümü ve noter onay imkânı</li>
+                    <li><span class="dot">●</span> Bedelsiz isimsiz gönderim</li>
+                    <li><span class="dot">●</span> Portal kaydı: 4-5 iş günü</li>
+                </ul>
+                <a class="tier-cta" href="#kayit" onclick="pickProg('Lise')">📝 Kayıt Başlat</a>
+            </div>
+            <div class="tier tier-full">
+                <div class="tf-body">
+                    <h3>🏅 Dekoratif Belge</h3>
+                    <p style="font-size:12.5px;color:#8b7fb0;line-height:1.6">Görsel açıdan orijinaliyle birebir
+                        üretilen, ancak herhangi bir dijital alt yapıda kaydı bulunmayan temsili belgedir. Ev, ofis veya
+                        iş yeri dekorasyonunda kullanılmak üzere tasarlanır. Resmî işlemlerde kullanılamaz.</p>
+                </div>
+                <div class="tf-side">
+                    <div class="tier-price">4.000 ₺</div>
+                    <ul>
+                        <li><span class="dot">●</span> Birebir orijinal görünüm</li>
+                        <li><span class="dot">●</span> Kabartma, ıslak imza, soğuk damga</li>
+                        <li><span class="dot">●</span> Dekorasyon ve sunum amaçlı</li>
+                        <li><span class="dot" style="color:#fbbf24">⚠</span> Herhangi bir resmî geçerliliği yoktur</li>
+                    </ul>
+                    <a class="tier-cta"
+                        href="https://api.whatsapp.com/send/?phone=905545924569&type=phone_number&app_absent=0"
+                        target="_blank" style="background:#25d366">💬 Detay Talep Et</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap" id="kayit">
+        <h2 class="hdg">Ön Kayıt <mark>Penceresi</mark></h2>
+        <p class="hdg-sub">Aşağıdaki alanları doldurun, bilgileriniz anlık olarak WhatsApp'a aktarılsın.</p>
+        <div class="app-box">
+            <form id="appForm">
+                <div class="fg"><label class="fl">Derece Tercihi *</label>
+                    <select id="progSel" class="fi" required onchange="togF()">
+                        <option value="">Seçiniz</option>
+                        <option value="Lisans">Lisans</option>
+                        <option value="Önlisans">Önlisans</option>
+                        <option value="Lise">Lise</option>
+                    </select>
+                </div>
+                <div id="cmnF" style="display:none">
+                    <div class="fg"><label class="fl">T.C. Kimlik No *</label><input type="text" id="tcK" class="fi"
+                            maxlength="11" inputmode="numeric" required>
+                        <div id="tcErr" class="fi-err">Hatalı kimlik numarası girdiniz.</div>
+                    </div>
+                    <div class="fg"><label class="fl">Ad Soyad *</label><input type="text" id="adS" class="fi" required>
+                    </div>
+                    <div class="fg"><label class="fl">Anne Adı *</label><input type="text" id="anaA" class="fi"
+                            required></div>
+                    <div class="fg"><label class="fl">Baba Adı *</label><input type="text" id="babaA" class="fi"
+                            required></div>
+                    <div class="fg"><label class="fl">Doğum Yeri *</label><input type="text" id="dogY" class="fi"
+                            required></div>
+                    <div class="fg"><label class="fl">Doğum Tarihi *</label>
+                        <div style="display:flex;gap:8px">
+                            <select id="dogG" class="fi" required>
+                                <option value="">Gün</option>
+                            </select>
+                            <select id="dogA" class="fi" required>
+                                <option value="">Ay</option>
+                            </select>
+                            <select id="dogYi" class="fi" required>
+                                <option value="">Yıl</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="liseF" style="display:none">
+                    <div class="fg"><label class="fl">🏫 Daha Önce Bitirdiğiniz Okul *</label><input type="text"
+                            id="oncekiOkul" class="fi"></div>
+                    <div class="fg"><label class="fl">🎓 Mezuniyet Hedefi Olan Okul *</label><input type="text"
+                            id="liseMO" class="fi"></div>
+                    <div class="fg"><label class="fl">Okul Müdürü <span style="opacity:.4">(isteğe
+                                bağlı)</span></label><input type="text" id="oMud" class="fi"></div>
+                    <div class="fg"><label class="fl">Müdür Yrd. <span style="opacity:.4">(isteğe
+                                bağlı)</span></label><input type="text" id="mYrd" class="fi"></div>
+                </div>
+                <div id="uniF" style="display:none">
+                    <div class="fg"><label class="fl">🎓 Üniversite *</label><input type="text" id="uniMO" class="fi">
+                    </div>
+                    <div class="fg"><label class="fl">Fakülte *</label><input type="text" id="fakA" class="fi"></div>
+                    <div class="fg"><label class="fl">Bölüm *</label><input type="text" id="bolA" class="fi"></div>
+                    <div class="fg"><label class="fl">Dekan <span style="opacity:.4">(isteğe bağlı)</span></label><input
+                            type="text" id="dekA" class="fi"></div>
+                    <div class="fg"><label class="fl">Rektör <span style="opacity:.4">(isteğe
+                                bağlı)</span></label><input type="text" id="rekA" class="fi"></div>
+                </div>
+                <div id="mezF" style="display:none">
+                    <div class="fg"><label class="fl">Mezuniyet Yılı *</label><select id="mezYil" class="fi" required>
+                            <option value="">Seçiniz</option>
+                        </select></div>
+                </div>
+                <div id="notF" style="display:none">
+                    <div class="fg"><label class="fl">Eklemek İstediğiniz Not</label><textarea id="notA" class="fi"
+                            rows="3" placeholder="Varsa iletmek istediğiniz detaylar..."></textarea></div>
+                    <label style="font-size:10.5px;display:block;margin-bottom:10px;color:#6b5f8a"><input
+                            type="checkbox" required> KVKK kapsamında kişisel verilerimin işlenmesine rıza
+                        gösteriyorum.</label>
+                </div>
+                <div id="subF" style="display:none"><button type="submit" class="wa-go">📱 WhatsApp Üzerinden
+                        İlet</button></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="wrap" id="gorusler">
+        <h2 class="hdg">Kullanıcı <mark>Görüşleri</mark></h2>
+        <p class="hdg-sub">Sürecimizi deneyimleyen kişilerden doğrudan gelen değerlendirmeler.</p>
+        <div class="vouch-grid">
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Serkan B.</span><span class="vouch-score">⭐ 5/5</span>
+                </div>
+                <p class="vouch-msg">İş yerimde terfi için lisans şartı konulmuştu. Burada 10 gün içinde her şey
+                    tamamlandı. E-Devlet'te de sorguladım, sorunsuz görünüyor. Kesinlikle başarılı bir hizmet.</p>
+            </div>
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Derya M.</span><span class="vouch-score">⭐ 5/5</span>
+                </div>
+                <p class="vouch-msg">Annem yıllardır diplomamı görmek istiyordu. Göstermelik seçeneği tam aradığım
+                    şeydi. Baskısı, mührü, her detayı çok gerçekçi. Annem çok sevindi.</p>
+            </div>
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Okan Ş.</span><span class="vouch-score">⭐ 5/5</span>
+                </div>
+                <p class="vouch-msg">Önlisans diplomamı çıkartmak için başvuru yaptım. WhatsApp'tan her aşamayı
+                    bildirdiler. Kargo geldiğinde paket üzerinde hiçbir yazı yoktu, tam istediğim gibi.</p>
+            </div>
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Seda K.</span><span class="vouch-score">⭐ 4/5</span>
+                </div>
+                <p class="vouch-msg">Lise belgem kayıptı ve yenisini almak mümkün olmuyordu. Bu hizmeti kullandım,
+                    belgem elime ulaştı. Sadece biraz daha hızlı olabilirdi diye düşündüm.</p>
+            </div>
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Emre V.</span><span class="vouch-score">⭐ 5/5</span>
+                </div>
+                <p class="vouch-msg">Yurt dışına çıkış hazırlıklarımda diploma gerekti. Lisans belgem hem fiziksel hem
+                    dijital ortamda eksiksiz geldi. Denklik sürecinde de sıkıntı yaşamadım.</p>
+            </div>
+            <div class="vouch">
+                <div class="vouch-top"><span class="vouch-who">Gamze T.</span><span class="vouch-score">⭐ 5/5</span>
+                </div>
+                <p class="vouch-msg">Taksit imkânı sunmaları büyük kolaylık oldu. İlk ödemeyi yapıp süreci başlattım,
+                    kalan tutarı rahatça tamamladım. İletişimleri de çok düzgündü.</p>
+            </div>
+        </div>
+        <div class="vouch-add">
+            <h3 style="font-size:14px;font-weight:700;color:#e9ddff;margin-bottom:8px">Deneyiminizi Aktarın</h3>
+            <form id="revForm">
+                <div class="fg"><input type="text" id="revN" class="fi" placeholder="İsminiz" required></div>
+                <div class="fg" style="display:flex;align-items:center;gap:5px">
+                    <span id="revStars" style="cursor:pointer;font-size:17px"><span class="rs" data-v="1">★</span><span
+                            class="rs" data-v="2">★</span><span class="rs" data-v="3">★</span><span class="rs"
+                            data-v="4">★</span><span class="rs" data-v="5">★</span></span><input type="hidden" id="revP"
+                        value="5">
+                </div>
+                <div class="fg"><textarea id="revT" class="fi" rows="3" placeholder="Deneyiminizi aktarın..."
+                        required></textarea></div>
+                <button type="submit"
+                    style="padding:8px 20px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-family:inherit;font-size:12px">Gönder</button>
+                <div id="revOk" style="display:none;margin-top:5px;color:#a78bfa;font-size:11px">Değerlendirmeniz
+                    kaydedildi.</div>
+            </form>
+        </div>
+    </div>
+
+    <div class="wrap" id="sorular">
+        <h2 class="hdg">Sık Gelen <mark>Sorular</mark></h2>
+        <div style="margin-top:18px">
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Devlet portalındaki kayıt nasıl doğrulanıyor? <span class="qa-chevron">▼</span>
+                </div>
+                <div class="qa-body">Kayıtlı programlardaki belgeler T.C. e-Devlet kapısında ilgili kurumun sayfası
+                    üzerinden sorgulanabilir. Dekoratif belgeler bu kapsamın dışında kalır.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Ödeme yapısı nasıl düzenlenmiş? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Her derece için 4.000 TL sabit başlangıç bedeli alınır. Artan tutar dereceye göre 1
+                    ila 4 aylık dilimlere bölünür. Havale veya EFT kabul edilir, ek masraf söz konusu değildir.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Belge ne zaman elimde olur? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Portal kaydı ortalama 4-5 iş gününde aktif olur. Fiziksel kopya bunun hemen
+                    ardından kargoya verilir ve 1-2 iş gününde adresinize ulaşır.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Kurum ve alan tercihini kim yapıyor? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Tamamen siz. Kayıt yapılmasını istediğiniz kurum, fakülte ve bölüm bilgilerini
+                    başvuru esnasında belirtirsiniz. Uygunluk kontrolü sonrası süreç başlatılır.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Kişisel bilgilerim korunuyor mu? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Evet. KVKK yükümlülüklerine tam uyumlu biçimde çalışıyoruz. Veriler yalnızca süreç
+                    boyunca kullanılır, ardından kalıcı olarak silinir.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Yüz yüze teslim yapılıyor mu? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Hayır. Gizlilik politikamız gereği elden teslim, kapıda ödeme veya yüz yüze görüşme
+                    gerçekleştirilmez. Tüm teslimatlar anonim kargo ile yapılır.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Not dökümü (transcript) hazırlanıyor mu? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Önlisans ve lisans programlarında akademik not dökümü standart olarak belgelerle
+                    birlikte düzenlenir. Talep edildiğinde noter tasdik desteği sunulur.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Yurt dışına gönderim mümkün mü? <span class="qa-chevron">▼</span></div>
+                <div class="qa-body">Yurt içi 81 ile bedelsiz kargo sağlanır. Yurt dışı talepleri için ek taşıma süresi
+                    ve ücreti WhatsApp üzerinden bilgilendirilir.</div>
+            </div>
+            <div class="qa-block" onclick="this.classList.toggle('show')">
+                <div class="qa-head">Dekoratif belge ile kayıtlı belge arasındaki temel fark nedir? <span
+                        class="qa-chevron">▼</span></div>
+                <div class="qa-body">Kayıtlı belge devletin dijital sistemlerinde yer alır ve resmî olarak kabul görür.
+                    Dekoratif belge yalnızca fiziksel üretimdir, dijital kaydı ve yasal bağlayıcılığı yoktur.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="info-panel">
+            <h2>E-Devlet Onaylı Diploma Satışında Süreç ve Güvence</h2>
+            <p>E-Devlet onaylı diploma, T.C. Cumhurbaşkanlığı dijital kapısı aracılığıyla doğrulanabilen, ilgili eğitim
+                kurumunun resmî veri tabanında yer alan akademik belgedir. Bu tür belgeler kamusal alanda, özel sektörde
+                ve uluslararası başvurularda geçerli kabul edilir.</p>
+            <h3>🧭 Hangi Durumlarda Başvurulur?</h3>
+            <p>Eğitimini tamamlayamayan veya belgesini kaybeden bireylerin kariyerlerini sürdürebilmeleri, kamusal
+                haklarını kullanabilmeleri ya da yurt dışı başvurularını gerçekleştirebilmeleri amacıyla başvuru
+                yapılmaktadır. Ayrıca iş değişikliği, terfi süreci veya ailesel beklentiler de talep gerekçeleri
+                arasında yer almaktadır.</p>
+            <h3>📊 Derece Bazında Kapsam</h3>
+            <p><strong>Ortaöğretim (Lise):</strong> MEB çatısı altında tescil edilen bu belge, sürücü belgesi çıkarmak,
+                kamu ihalelerine katılmak ve temel iş başvurularında ön koşulu karşılamak için gereklidir.</p>
+            <p><strong>Önlisans:</strong> İki yıllık meslek yüksekokulu derecesidir. Kamu kadrolarına atanma, maaş
+                kademesi yükseltme ve sektörel sertifika gereksinimlerinde kullanılır.</p>
+            <p><strong>Lisans:</strong> Dört yıllık üniversite mezuniyet belgesidir. Lisansüstü çalışmalara
+                başvurabilmek, uluslararası denklik almak ve üst yönetim pozisyonlarına aday olmak için zorunludur.</p>
+            <h3>⚙️ İşlem Akışı</h3>
+            <p>İlk adımda WhatsApp üzerinden detaylı bilgi alışverişi yapılır ve uygun program belirlenir. İkinci
+                aşamada gerekli evrak çalışması ve kurum kayıt süreci başlatılır. Son aşamada dijital kayıt aktif
+                edilerek fiziksel belge basılır ve anonim kargo aracılığıyla adresinize iletilir.</p>
+        </div>
+
+        <div class="info-panel">
+            <h2>Dekoratif Belge Kullanım Alanları ve Sınırları</h2>
+            <p>Dekoratif diploma, fiziksel özellikleri itibariyle gerçek belgelerle aynı nitelikte üretilen, fakat
+                herhangi bir resmî kayda sahip olmayan temsili belgedir. Yasal süreçlerde kullanılamaz ve kurumsal
+                geçerliliği yoktur.</p>
+            <h3>🖼️ Kullanım Senaryoları</h3>
+            <ul>
+                <li>Aile fertlerinin beklentilerini karşılamak amacıyla fiziksel belge sunumu</li>
+                <li>Ofis veya çalışma alanında çerçeveli duvar dekorasyonu</li>
+                <li>Anma, koleksiyon veya hatıra amaçlı sipariş</li>
+                <li>Hediye veya sürpriz olarak diploma düzenletme</li>
+            </ul>
+            <h3>⚠️ Yasal Sınırlar</h3>
+            <p>Bu tür belgeler hiçbir resmî kurum, özel sektör kuruluşu veya eğitim kurumu tarafından kabul edilmez.
+                Sadece kişisel ve dekoratif amaçlarla edinilmelidir. Resmî gereksinimler için e-Devlet kayıtlı
+                programlarımıza başvurmanızı tavsiye ederiz.</p>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send/?phone=905545924569&type=phone_number&app_absent=0" class="wa-bubble"
+        target="_blank">💬</a>
+
+    <footer>
+        <p>© 2025 edevletonaylidiplomasatisi — Tüm hakları saklıdır.</p>
+        <p style="margin-top:3px">Destek: <a
+                href="https://api.whatsapp.com/send/?phone=905545924569&type=phone_number&app_absent=0"
+                target="_blank">WhatsApp Hattı</a></p>
+    </footer>
+
+    <script>
+        function showLB(s) { var l = document.getElementById('lbox'); document.getElementById('lbPic').src = s; l.style.display = 'flex' }
+        function hideLB() { document.getElementById('lbox').style.display = 'none' }
+        function pickProg(p) { var s = document.getElementById('progSel'); for (var i = 0; i < s.options.length; i++) { if (s.options[i].value === p) { s.selectedIndex = i; break } } togF() }
+        function togF() { var p = document.getElementById('progSel').value, c = document.getElementById('cmnF'), l = document.getElementById('liseF'), u = document.getElementById('uniF'), n = document.getElementById('notF'), s = document.getElementById('subF'), mf = document.getElementById('mezF'); if (!p) { c.style.display = l.style.display = u.style.display = n.style.display = s.style.display = mf.style.display = 'none'; document.getElementById('liseMO').required = false; document.getElementById('uniMO').required = false; document.getElementById('fakA').required = false; document.getElementById('bolA').required = false; document.getElementById('mezYil').required = false } else if (p === 'Lise') { c.style.display = l.style.display = n.style.display = s.style.display = mf.style.display = 'block'; u.style.display = 'none'; document.getElementById('liseMO').required = true; document.getElementById('uniMO').required = false; document.getElementById('fakA').required = false; document.getElementById('bolA').required = false; document.getElementById('mezYil').required = true } else { c.style.display = u.style.display = n.style.display = s.style.display = mf.style.display = 'block'; l.style.display = 'none'; document.getElementById('liseMO').required = false; document.getElementById('uniMO').required = true; document.getElementById('fakA').required = true; document.getElementById('bolA').required = true; document.getElementById('mezYil').required = true } }
+        (function () { var dg = document.getElementById('dogG'), da = document.getElementById('dogA'), dy = document.getElementById('dogYi'), my = document.getElementById('mezYil'); for (var i = 1; i <= 31; i++) { var o = document.createElement('option'); o.value = i < 10 ? '0' + i : '' + i; o.textContent = i; dg.appendChild(o) } var aylar = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']; for (var i = 0; i < aylar.length; i++) { var o = document.createElement('option'); o.value = i < 9 ? '0' + (i + 1) : '' + (i + 1); o.textContent = aylar[i]; da.appendChild(o) } var suan = new Date().getFullYear(); for (var i = suan; i >= 1940; i--) { var o = document.createElement('option'); o.value = i; o.textContent = i; dy.appendChild(o) } for (var i = suan; i >= 1970; i--) { var o = document.createElement('option'); o.value = i; o.textContent = i; my.appendChild(o) } })();
+        function valTC(tc) { if (!/^[0-9]{11}$/.test(tc) || tc[0] === '0') return !1; var d = tc.split('').map(Number), s1 = d[0] + d[2] + d[4] + d[6] + d[8], s2 = d[1] + d[3] + d[5] + d[7], t10 = ((s1 * 7) - s2) % 10; if (t10 < 0) t10 += 10; if (d[9] !== t10) return !1; var t11 = (s1 + s2 + t10) % 10; return d[10] === t11 }
+        var tcI = document.getElementById('tcK'), tcE = document.getElementById('tcErr');
+        if (tcI) { tcI.addEventListener('input', function () { this.value = this.value.replace(/[^0-9]/g, ''); var v = this.value; if (!v) { tcE.style.display = 'none'; this.classList.remove('fi-inv'); return } var ok = valTC(v); tcE.style.display = ok ? 'none' : 'block'; this.classList[ok ? 'remove' : 'add']('fi-inv') }) }
+        document.getElementById('appForm').addEventListener('submit', function (e) { e.preventDefault(); var tc = document.getElementById('tcK').value; if (!valTC(tc)) { alert('Hatalı T.C. Kimlik Numarası!'); document.getElementById('tcK').focus(); return } var p = document.getElementById('progSel').value, ad = document.getElementById('adS').value, ana = document.getElementById('anaA').value, baba = document.getElementById('babaA').value, dy = document.getElementById('dogY').value; var dtF = document.getElementById('dogG').value + '.' + document.getElementById('dogA').value + '.' + document.getElementById('dogYi').value; var mezYil = document.getElementById('mezYil').value; var nt = document.getElementById('notA').value || '-'; var msg = '📋 *Program:* ' + p + '\n🆔 *T.C.:* ' + tc + '\n👤 *Ad Soyad:* ' + ad + '\n👩 *Anne Adı:* ' + ana + '\n👨 *Baba Adı:* ' + baba + '\n📍 *Doğum Yeri:* ' + dy + '\n📅 *Doğum Tarihi:* ' + dtF + '\n'; if (p === 'Lise') { var onceki = document.getElementById('oncekiOkul').value; if (onceki) msg += '🏫 *Önceki Okul:* ' + onceki + '\n'; msg += '🎓 *Hedef Okul:* ' + (document.getElementById('liseMO').value) + '\n'; var m = document.getElementById('oMud').value; var y = document.getElementById('mYrd').value; if (m) msg += '👨‍🏫 *Müdür:* ' + m + '\n'; if (y) msg += '👨‍💼 *Müdür Yrd:* ' + y + '\n' } else { msg += '🎓 *Üniversite:* ' + (document.getElementById('uniMO').value) + '\n🏛️ *Fakülte:* ' + (document.getElementById('fakA').value) + '\n📚 *Bölüm:* ' + (document.getElementById('bolA').value) + '\n'; var dk = document.getElementById('dekA').value; var rk = document.getElementById('rekA').value; if (dk) msg += '👨‍🏫 *Dekan:* ' + dk + '\n'; if (rk) msg += '🏢 *Rektör:* ' + rk + '\n' } msg += '📆 *Mezuniyet Yılı:* ' + mezYil + '\n'; if (nt !== '-') msg += '💬 *Not:* ' + nt + '\n'; window.open('https://api.whatsapp.com/send/?phone=905545924569&text=' + encodeURIComponent(msg) + '&type=phone_number&app_absent=0', '_blank') });
+        var rStars = document.getElementById('revStars');
+        if (rStars) { rStars.addEventListener('click', function (e) { var t = e.target; if (!t.classList.contains('rs')) return; var v = parseInt(t.getAttribute('data-v')) || 5; document.getElementById('revP').value = v; rStars.querySelectorAll('.rs').forEach(function (s) { parseInt(s.getAttribute('data-v')) <= v ? s.style.color = '#a78bfa' : s.style.color = '#333' }) }) }
+        document.getElementById('revForm').addEventListener('submit', function (e) { e.preventDefault(); var ad = document.getElementById('revN').value.trim(), p = document.getElementById('revP').value, mt = document.getElementById('revT').value.trim(); if (!ad || !mt) return; var g = document.querySelector('.vouch-grid'); if (g) { var c = document.createElement('div'); c.className = 'vouch'; c.innerHTML = '<div class="vouch-top"><span class="vouch-who"></span><span class="vouch-score"></span></div><p class="vouch-msg"></p>'; c.querySelector('.vouch-who').textContent = ad; c.querySelector('.vouch-score').textContent = '⭐ ' + p + '/5'; c.querySelector('.vouch-msg').textContent = mt; g.prepend(c) } document.getElementById('revOk').style.display = 'block'; this.reset() });
+    </script>
+</body>
+
+</html>
